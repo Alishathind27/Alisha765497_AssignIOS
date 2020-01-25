@@ -68,6 +68,7 @@ class ViewController: UIViewController {
             // save context
             do {
                 try Context.save()
+                
             } catch {
                 print(error)
             }
@@ -87,7 +88,7 @@ class ViewController: UIViewController {
                                  let description = result.value(forKey: "desc") as! String
                                  let price = result.value(forKey: "price") as! Int
                                  
-                                Prod?.append(Products(Id: Int(id) ?? 0, Name: name, Description: description, Price: price))
+                                Prod?.append(Products(Id: id ?? 0, Name: name, Description: description, Price: price))
                              }
                          }
                      } catch {
