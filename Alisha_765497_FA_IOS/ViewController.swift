@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        loadData()
                var p1 = Products(Id: 1, Name: "Mobile Phone", Description: "a", Price: 1000)
                var p2 = Products(Id: 2, Name: "Steamer", Description: "abc", Price: 50)
                var p3 = Products(Id: 3, Name: "computer", Description: "hsh", Price: 60)
@@ -73,6 +74,26 @@ class ViewController: UIViewController {
         }
     }
     
+    func loadData(){
+              let appDelegate = UIApplication.shared.delegate as! AppDelegate
+              let Context = appDelegate.persistentContainer.viewContext
+              let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+              do {
+                         let results = try Context.fetch(fetchRequest)
+                         if results is [NSManagedObject] {
+                             for result in results as! [NSManagedObject] {
+                                 let id = result.value(forKey: "id") as! Int
+                                 let name = result.value(forKey: "name") as! String
+                                 let description = result.value(forKey: "desc") as! String
+                                 let price = result.value(forKey: "price") as! Int
+                                 
+                                Prod?.append(Products(Id: Int(id) ?? 0, Name: name, Description: description, Price: price))
+                             }
+                         }
+                     } catch {
+                         print(error)
+                     }
+                     }
    
     
     }
