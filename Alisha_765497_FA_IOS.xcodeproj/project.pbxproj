@@ -14,6 +14,8 @@
 		614E231C23DBB54B00695C83 /* Alisha_765497_FA_IOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 614E231A23DBB54B00695C83 /* Alisha_765497_FA_IOS.xcdatamodeld */; };
 		614E231E23DBB54D00695C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 614E231D23DBB54D00695C83 /* Assets.xcassets */; };
 		614E232123DBB54D00695C83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614E231F23DBB54D00695C83 /* LaunchScreen.storyboard */; };
+		614E232C23DBB6D800695C83 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E232B23DBB6D800695C83 /* ProductTableViewController.swift */; };
+		614E232E23DBBA1A00695C83 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E232D23DBBA1A00695C83 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		614E231D23DBB54D00695C83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		614E232023DBB54D00695C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		614E232223DBB54D00695C83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		614E232B23DBB6D800695C83 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		614E232D23DBBA1A00695C83 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				614E231123DBB54B00695C83 /* AppDelegate.swift */,
+				614E232823DBB59000695C83 /* Modal */,
 				614E231323DBB54B00695C83 /* SceneDelegate.swift */,
 				614E231523DBB54B00695C83 /* ViewController.swift */,
+				614E232B23DBB6D800695C83 /* ProductTableViewController.swift */,
 				614E231723DBB54B00695C83 /* Main.storyboard */,
 				614E231D23DBB54D00695C83 /* Assets.xcassets */,
 				614E231F23DBB54D00695C83 /* LaunchScreen.storyboard */,
@@ -68,6 +74,14 @@
 				614E231A23DBB54B00695C83 /* Alisha_765497_FA_IOS.xcdatamodeld */,
 			);
 			path = Alisha_765497_FA_IOS;
+			sourceTree = "<group>";
+		};
+		614E232823DBB59000695C83 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				614E232D23DBBA1A00695C83 /* Product.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +158,9 @@
 				614E231C23DBB54B00695C83 /* Alisha_765497_FA_IOS.xcdatamodeld in Sources */,
 				614E231623DBB54B00695C83 /* ViewController.swift in Sources */,
 				614E231223DBB54B00695C83 /* AppDelegate.swift in Sources */,
+				614E232C23DBB6D800695C83 /* ProductTableViewController.swift in Sources */,
 				614E231423DBB54B00695C83 /* SceneDelegate.swift in Sources */,
+				614E232E23DBBA1A00695C83 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
