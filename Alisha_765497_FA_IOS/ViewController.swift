@@ -45,27 +45,36 @@ class ViewController: UIViewController {
         priceTxtField.text = "\(Products.products[0].price)"
         descTxtField.text = "\(Products.products[0].description)"
     }
+    
+    
     @IBAction func addProduct(_ sender: UIButton) {
         
+        idTxtField.text = ""
+        nameTxtField.text = ""
+        priceTxtField.text = ""
+        descTxtField.text = ""
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
-        do {
-                   let results = try managedContext.fetch(fetchRequest)
-                   if results is [NSManagedObject] {
-                       for result in results as! [NSManagedObject] {
-                           let id = result.value(forKey: "id") as! String
-                           let name = result.value(forKey: "name") as! String
-                           let description = result.value(forKey: "desc") as! Int
-                           let price = result.value(forKey: "price") as! Int
-                           
-                        
-                       }
-                   }
-               } catch {
-                   print(error)
-               }
-               }
+        let Context = appDelegate.persistentContainer.viewContext
+        
+        for i in Prod! {
+            let bookEntity = NSEntityDescription.insertNewObject(forEntityName: "Product", into: Context)
+            bookEntity.setValue(i.id, forKey: "id")
+            bookEntity.setValue(i.name, forKey: "name")
+            bookEntity.setValue(i.description, forKey: "desc")
+            bookEntity.setValue(i.price, forKey: "price")
+            
+            // save context
+            do {
+                try Context.save()
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+   
+    
     }
     
 

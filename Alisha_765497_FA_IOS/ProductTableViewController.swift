@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class ProductTableViewController: UITableViewController {
 
     var Prod: [Products]?
@@ -106,5 +106,27 @@ class ProductTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func loadData(){
+           let appDelegate = UIApplication.shared.delegate as! AppDelegate
+           let Context = appDelegate.persistentContainer.viewContext
+           let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+           do {
+                      let results = try Context.fetch(fetchRequest)
+                      if results is [NSManagedObject] {
+                          for result in results as! [NSManagedObject] {
+                              let id = result.value(forKey: "id") as! String
+                              let name = result.value(forKey: "name") as! String
+                              let description = result.value(forKey: "desc") as! Int
+                              let price = result.value(forKey: "price") as! Int
+                              
+                           
+                          }
+                      }
+                  } catch {
+                      print(error)
+                  }
+                  }
+    override func viewWillAppear(_ animated: Bool) {
+//        loadData()
+    }
 }
