@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 class ProductTableViewController: UITableViewController {
 
-    var Prod: [Products]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +21,7 @@ class ProductTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        var p1 = Products(Id: 1, Name: "Mobile Phone", Description: "a", Price: 1000)
-        var p2 = Products(Id: 2, Name: "Steamer", Description: "abc", Price: 50)
-        var p3 = Products(Id: 3, Name: "computer", Description: "hsh", Price: 60)
-        var p4 = Products(Id: 4, Name: "mouse", Description: "hds", Price: 60)
-        var p5 = Products(Id: 5, Name: "keyboard", Description: "gg", Price: 70)
-        var p6 = Products(Id: 6, Name: "Ipad", Description: "srgg", Price: 80)
-        var p7 = Products(Id: 7, Name: "phonecase", Description: "gchjsg", Price: 90)
-        var p8 = Products(Id: 8, Name: "heater", Description: "dhs", Price: 100)
-        var p9 = Products(Id: 9, Name: "Toaster", Description: "jdi", Price: 50)
-        var p10 = Products(Id: 10, Name: "Mixer", Description: "csdg", Price: 50)
-        
-        Prod = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10]
-        
+       
     }
 
     // MARK: - Table view data source
@@ -47,7 +35,7 @@ class ProductTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         
         
-        return Prod?.count ?? 0
+        return Products.products.count ?? 0
     }
 
     
@@ -106,6 +94,8 @@ class ProductTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-   
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
 }

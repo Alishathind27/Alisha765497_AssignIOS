@@ -9,12 +9,14 @@
 import Foundation
 
 class Products{
-    internal init(Id: Int, Name: String, Description: String, Price: Int) {
-        self.id = Id
-        self.name = Name
-        self.description = Description
-        self.price = Price
+    internal init(id: Int, name: String, description: String, price: Int) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.price = price
     }
+    
+    
     
     var id: Int
     var name: String
